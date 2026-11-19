@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Happy Playground Machalí: juegos, diversión y cumpleaños inolvidables. Consulta disponibilidad y solicita tu fecha.">
+  <meta name="theme-color" content="#111111">
+  <title>Happy Playground | Machalí</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Happy Playground, inicio"><img src="logo.png" alt="Happy Playground"></a>
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#inicio">Inicio</a><a href="#espacio">Nuestro espacio</a><a href="#cumpleanos">Cumpleaños</a><a href="#calendario">Calendario</a><a href="#contacto">Contacto</a>
+    </nav>
+    <a class="button button-yellow header-cta" href="#reserva">¡Reserva tu fecha!</a>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <span class="eyebrow">¡La diversión está aquí!</span>
+        <h1>Juega, celebra<br><span>y sonríe</span></h1>
+        <p>Un mundo de juegos y momentos inolvidables para los más pequeños en Machalí.</p>
+        <a class="button button-yellow" href="#reserva">Consultar disponibilidad <span>→</span></a>
+      </div>
+      <div class="hero-photo" role="img" aria-label="Niños jugando en una piscina de pelotas"></div>
+      <div class="hero-bubbles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+    </section>
+
+    <section class="feature-strip" aria-label="Servicios">
+      <article><span class="feature-icon green">●</span><b>Piscina de pelotas</b></article>
+      <article><span class="feature-icon blue">★</span><b>Juegos y diversión</b></article>
+      <article><span class="feature-icon red">🎂</span><b>Cumpleaños inolvidables</b></article>
+      <article><span class="feature-icon purple">✓</span><b>Un espacio para disfrutar</b></article>
+    </section>
+
+    <section class="section" id="espacio">
+      <div class="section-heading"><div><span class="eyebrow">Ven a conocernos</span><h2>Nuestro <span>playground</span></h2></div><p>Un lugar lleno de color, movimiento y aventuras.</p></div>
+      <div class="photo-grid">
+        <figure class="photo-card photo-main"><img src="https://images.unsplash.com/photo-1564429238817-393bd3a6f3b5?auto=format&fit=crop&w=1200&q=85" alt="Zona de juegos infantil"><figcaption>¡Mucho por descubrir!</figcaption></figure>
+        <figure class="photo-card"><img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=900&q=85" alt="Juegos coloridos para niños"><figcaption>Juega y explora</figcaption></figure>
+        <figure class="photo-card"><img src="https://images.unsplash.com/photo-1566004100631-35d015d6a491?auto=format&fit=crop&w=900&q=85" alt="Espacio de celebración infantil"><figcaption>Momentos felices</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="birthday-section" id="cumpleanos">
+      <div class="birthday-image" role="img" aria-label="Celebración de cumpleaños infantil"></div>
+      <div class="birthday-copy"><span class="eyebrow">Un día especial</span><h2>¡Celebra tu cumpleaños <span>con nosotros!</span></h2>
+        <p>Prepara una celebración llena de juegos, risas y recuerdos. Cuéntanos qué tienes en mente y te ayudaremos a organizarla.</p>
+        <ul><li>Espacio de juegos para disfrutar</li><li>Alternativas para celebrar</li><li>Atención personalizada para tu consulta</li></ul>
+        <a class="button button-dark" href="#reserva">Quiero cotizar <span>→</span></a>
+      </div>
+    </section>
+
+    <section class="booking-area" id="calendario">
+      <div class="calendar-panel panel">
+        <div class="panel-title"><span class="panel-icon">▦</span><div><span class="eyebrow">Planifica con tiempo</span><h2>Calendario</h2></div></div>
+        <p class="panel-intro">Consulta el calendario y luego envíanos tu fecha preferida. La disponibilidad debe ser confirmada por nuestro equipo.</p>
+        <div class="calendar-toolbar"><button id="prevMonth" aria-label="Mes anterior">‹</button><h3 id="monthLabel">Cargando calendario…</h3><button id="nextMonth" aria-label="Mes siguiente">›</button></div>
+        <div class="calendar-grid" id="calendarGrid" aria-live="polite"></div>
+        <div class="calendar-legend"><span class="dot dot-green"></span> Fecha seleccionada <span class="dot dot-gray"></span> Solicitud pendiente</div>
+        <p class="calendar-note" id="calendarNote">El calendario es orientativo. Te confirmaremos la disponibilidad por WhatsApp.</p>
+      </div>
+
+      <div class="form-panel panel" id="reserva">
+        <div class="panel-title"><span class="panel-icon">✎</span><div><span class="eyebrow">¡Hablemos!</span><h2>Solicita tu fecha</h2></div></div>
+        <form id="bookingForm">
+          <div class="form-grid">
+            <label>Nombre y apellido<input name="nombre" autocomplete="name" required placeholder="Tu nombre"></label>
+            <label>Teléfono / WhatsApp<input name="telefono" autocomplete="tel" required placeholder="+56 9 …"></label>
+            <label>Correo electrónico<input name="email" type="email" autocomplete="email" placeholder="tucorreo@email.com"></label>
+            <label>Fecha del cumpleaños<input name="fecha" id="bookingDate" type="date" required></label>
+            <label>Edad del niño/a<select name="edad" required><option value="">Seleccionar</option><option>1 a 2 años</option><option>3 a 4 años</option><option>5 a 6 años</option><option>7 a 8 años</option><option>Otra edad</option></select></label>
+            <label>Cantidad de invitados<select name="invitados" required><option value="">Seleccionar</option><option>Hasta 10</option><option>11 a 15</option><option>16 a 20</option><option>21 a 30</option><option>Más de 30</option></select></label>
+          </div>
+          <label class="full-label">Cuéntanos más (opcional)<textarea name="mensaje" rows="3" placeholder="Horario preferido, dudas o detalles…"></textarea></label>
+          <label class="consent"><input type="checkbox" name="consentimiento" required><span>Acepto que Happy Playground me contacte para responder esta solicitud.</span></label>
+          <button class="button button-green submit-button" type="submit">Enviar solicitud <span>➤</span></button>
+          <p class="form-status" id="formStatus" role="status"></p>
+          <p class="small-print">Enviar este formulario no confirma una reserva. Nuestro equipo revisará la fecha y se pondrá en contacto contigo.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contacto">
+      <div><span class="eyebrow">Estamos para ayudarte</span><h2>¡Hablemos!</h2><p>Contáctanos para consultar paquetes, horarios y disponibilidad.</p>
+        <div class="contact-links">
+          <a id="whatsappLink" href="#" target="_blank" rel="noopener"> <span>✆</span> WhatsApp</a>
+          <a id="instagramLink" href="https://www.instagram.com/happyplayground.machali/" target="_blank" rel="noopener"><span>◎</span> Instagram</a>
+          <a id="mapsLink" href="#" target="_blank" rel="noopener"><span>⌖</span> Cómo llegar</a>
+        </div>
+      </div>
+      <div class="map-frame"><iframe id="mapFrame" title="Ubicación de Happy Playground en Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Machal%C3%AD%2C%20Chile&output=embed"></iframe></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <img src="logo.png" alt="Happy Playground" class="footer-logo">
+    <p>¡Que cada día sea una aventura!</p>
+    <div class="footer-social"><a href="https://www.instagram.com/happyplayground.machali/" target="_blank" rel="noopener">Instagram @happyplayground.machali</a></div>
+    <small>© <span id="year"></span> Happy Playground. Todos los derechos reservados.</small>
+  </footer>
+
+  <script>
+    // EDITA estos datos antes de publicar. No uses un número inventado.
+    const CONFIG = {
+      appsScriptUrl: "PEGA_AQUI_LA_URL_DE_TU_WEB_APP_DE_APPS_SCRIPT",
+      whatsappNumber: "569XXXXXXXX", // Solo números, con código de país. Ej.: 56912345678
+      instagramUrl: "https://www.instagram.com/happyplayground.machali/",
+      businessAddress: "Machalí, Región de O'Higgins, Chile",
+      calendarEmbedUrl: "" // Opcional: URL pública de inserción de Google Calendar
+    };
+
+    const monthNames = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+    const weekDays = ["Lun","Mar","Mié","Jue","Vie","Sáb","Dom"];
+    let shownMonth = new Date(); shownMonth.setDate(1);
+
+    function renderCalendar() {
+      const grid = document.getElementById("calendarGrid");
+      const year = shownMonth.getFullYear(), month = shownMonth.getMonth();
+      document.getElementById("monthLabel").textContent = `${monthNames[month]} ${year}`;
+      grid.innerHTML = "";
+      weekDays.forEach(day => { const el=document.createElement("div"); el.className="weekday"; el.textContent=day; grid.appendChild(el); });
+      let offset = (new Date(year, month, 1).getDay() + 6) % 7;
+      const total = new Date(year, month + 1, 0).getDate();
+      for(let i=0;i<offset;i++){ const blank=document.createElement("div"); blank.className="day blank"; grid.appendChild(blank); }
+      for(let day=1; day<=total; day++){
+        const date = new Date(year, month, day);
+        const el=document.createElement("button"); el.type="button"; el.className="day"; el.textContent=day;
+        const today = new Date(); today.setHours(0,0,0,0);
+        if(date < today) el.classList.add("past");
+        el.addEventListener("click",()=>{
+          if(date < today) return;
+          document.querySelectorAll(".day.selected").forEach(x=>x.classList.remove("selected"));
+          el.classList.add("selected");
+          document.getElementById("bookingDate").value = `${year}-${String(month+1).padStart(2,"0")}-${String(day).padStart(2,"0")}`;
+          document.getElementById("reserva").scrollIntoView({behavior:"smooth",block:"center"});
+        });
+        grid.appendChild(el);
+      }
+    }
+    document.getElementById("prevMonth").addEventListener("click",()=>{shownMonth.setMonth(shownMonth.getMonth()-1);renderCalendar();});
+    document.getElementById("nextMonth").addEventListener("click",()=>{shownMonth.setMonth(shownMonth.getMonth()+1);renderCalendar();});
+    renderCalendar();
+
+    const wa = document.getElementById("whatsappLink");
+    const number = CONFIG.whatsappNumber.replace(/\D/g,"");
+    wa.href = number.includes("X") || number.length < 10 ? "https://wa.me/" : `https://wa.me/${number}?text=${encodeURIComponent("Hola, quisiera información sobre cumpleaños en Happy Playground.")}`;
+    document.getElementById("instagramLink").href = CONFIG.instagramUrl;
+    document.getElementById("mapsLink").href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CONFIG.businessAddress)}`;
+    document.getElementById("mapFrame").src = `https://www.google.com/maps?q=${encodeURIComponent(CONFIG.businessAddress)}&output=embed`;
+    if(CONFIG.calendarEmbedUrl) {
+      const frame=document.createElement("iframe"); frame.src=CONFIG.calendarEmbedUrl; frame.title="Calendario Google"; frame.loading="lazy";
+      frame.style.cssText="width:100%;height:420px;border:0;border-radius:16px;margin-top:14px";
+      document.querySelector(".calendar-panel").appendChild(frame);
+    }
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const menuButton=document.querySelector(".menu-toggle"), nav=document.getElementById("mainNav");
+    menuButton.addEventListener("click",()=>{const open=nav.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(open));});
+    nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");menuButton.setAttribute("aria-expanded","false");}));
+
+    document.getElementById("bookingForm").addEventListener("submit", async (event)=>{
+      event.preventDefault();
+      const form=event.currentTarget, status=document.getElementById("formStatus"), data=Object.fromEntries(new FormData(form).entries());
+      const submit=form.querySelector("button[type=submit]");
+      if(!form.reportValidity()) return;
+      if(!CONFIG.appsScriptUrl.startsWith("https://script.google.com/")) {
+        status.textContent="Falta configurar la conexión con Google Sheets. Revisa la URL de Apps Script en index.html.";
+        status.className="form-status error"; return;
+      }
+      data.origen="Sitio web Happy Playground";
+      submit.disabled=true; submit.textContent="Enviando…";
+      try {
+        // Apps Script recibe el formulario y lo guarda en Sheets; la respuesta se confirma en pantalla.
+        await fetch(CONFIG.appsScriptUrl,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(data)});
+        status.textContent="¡Solicitud enviada! Te contactaremos para confirmar la disponibilidad.";
+        status.className="form-status success"; form.reset();
+      } catch(error) {
+        status.textContent="No pudimos enviar la solicitud. Escríbenos por WhatsApp para ayudarte.";
+        status.className="form-status error";
+      } finally { submit.disabled=false; submit.innerHTML='Enviar solicitud <span>➤</span>'; }
+    });
+  </script>
+</body>
+</html>

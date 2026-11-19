@@ -1,42 +1,5 @@
 HAPPY PLAYGROUND - ARCHIVOS DE LA WEB
 
-ARCHIVOS
-- index.html: página, formulario, calendario visual y enlaces.
-- styles.css: diseño adaptable.
-- Code.gs: backend para guardar solicitudes en Google Sheets y opcionalmente crear eventos pendientes en Google Calendar.
-- logo.png: logo original proporcionado.
+Gracias por visitarnos, recuerda seguirnos en instagram
 
-CONFIGURACIÓN OBLIGATORIA
-1. Google Sheets:
-   - Crea una hoja de cálculo llamada, por ejemplo, "Solicitudes Happy Playground".
-   - Copia el ID que aparece entre /d/ y /edit en la URL.
-2. Google Apps Script:
-   - En la hoja: Extensiones > Apps Script.
-   - Pega el contenido de Code.gs.
-   - Reemplaza SHEET_ID por el ID de tu hoja.
-   - Guarda.
-   - Implementar > Nueva implementación > Aplicación web.
-   - Ejecutar como: Yo.
-   - Quién tiene acceso: Cualquier persona.
-   - Implementa y copia la URL que termina en /exec.
-   - Pega esa URL en CONFIG.appsScriptUrl dentro de index.html.
-   - Si actualizas Code.gs más adelante, crea una nueva versión de la implementación.
-3. Google Calendar (opcional):
-   - Si quieres que cada solicitud cree un evento provisional, copia el ID del calendario en CALENDAR_ID.
-   - En Google Calendar > Configuración > Integrar calendario puedes encontrar el ID.
-   - Autoriza los permisos solicitados por Apps Script.
-   - El evento queda titulado SOLICITUD PENDIENTE. No confirma ni bloquea disponibilidad.
-   - Para mostrar un calendario incrustado en la web, configura su URL pública de inserción en CONFIG.calendarEmbedUrl. No hagas público un calendario con información privada.
-4. Contacto:
-   - En CONFIG.whatsappNumber escribe el número real con código de país, solo números (ejemplo de formato: 56912345678).
-   - CONFIG.instagramUrl ya apunta a @happyplayground.machali.
-   - Reemplaza CONFIG.businessAddress por la dirección exacta para Google Maps.
-5. Publicación:
-   - Sube index.html, styles.css y logo.png juntos a tu hosting (por ejemplo GitHub Pages o Netlify).
-   - Code.gs se pega en Google Apps Script; no se sube al hosting.
-
-IMPORTANTE
-- El calendario mensual incluido permite seleccionar una fecha, pero no consulta por sí solo la disponibilidad real de Google Calendar.
-- El formulario muestra confirmación de envío al terminar la petición, pero usa el modo no-cors del navegador; verifica siempre que los registros lleguen a Sheets durante las pruebas.
-- No publiques datos personales en un calendario público.
-- Sustituye las imágenes de ejemplo por fotos reales del local para representar fielmente el negocio.
+www.instagram.com/happyplayground.machali
